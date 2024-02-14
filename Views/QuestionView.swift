@@ -45,7 +45,19 @@ struct QuestionView: View {
         else {
             VStack(spacing: 20, content: {
                 Text("Country Flag Game")
+                    .font(.title)
+            Text("Congratulations! You have completed this game.")
+                Text("You scored \(gameManager.score) out of \(gameManager.questions.count)")
+                Button {
+                    gameManager.reset()
+                } label: {
+                    CustomButton(text: "Play Again")
+                }
             })
+            .foregroundColor(.yellow)
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.cyan)
         }
     }
 }
